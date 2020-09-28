@@ -18,7 +18,12 @@ def join_integers(numbers):
 	return int(result)
 
 def generate_prime_numbers(limit):
-	return [0]
+	premiers = []
+	nombres = [i for i in range(2,limit+1)]
+	while len(nombres) != 0:
+		premiers.append(nombres[0])
+		nombres = [elem for elem in nombres if elem % nombres[0] != 0]
+	return (premiers)
 
 def combine_strings_and_numbers(strings, num_combinations, excluded_multiples):
 	return [""]
